@@ -1,5 +1,5 @@
 from numpy import matmul, mean, array
-from numpy.linalg import svd, det
+from numpy.linalg import svd, det, pinv
 
 def orthogonal_procrustes(A: array, B: array, centering = True, reflection = False) -> array:
     """
@@ -26,14 +26,17 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
         B_svd = B
 
     # perform SVD
-    U, _, Vh = svd(matmul(B_svd, A_svd.transpose()))
+    U, _, Vh = svd(matmul(B_svd, A.transpose()))
 
-    # make sure rigid motion (no reflection):
-    if not reflection:
-        if det(Vh) < 0.: Vh[0] = -Vh[0]
+    print(f'{det(U)=}')
+    print(f'{det(Vh)=}')
 
     # compute Omega
     Omega = matmul(U, Vh)
+
+    # make sure rigid motion (no reflection):
+    if not reflection:
+        if det(Omega) < 0.: Omega[0] = -Omega[0]
 
     return Omega
 

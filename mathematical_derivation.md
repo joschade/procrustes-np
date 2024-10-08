@@ -1,5 +1,6 @@
 # Mathematical derivation
 Based on https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem.
+Berlin, 08 OCT 2024
 
 ## Problem statement
 The orthogonal procrustes problem asks, given two matrices $A, B \in \mathbb{R}^{m \times n}$, 
@@ -40,7 +41,8 @@ by applying  the *pseudo-inverse* $A^{-1}$  of $A$ and yield
 $$ \Omega - BA^{-1}.$$ 
 
 Pseudo-inverses are a notion which extends invertibility of 
-matrices to non-square matrices (https://en.wikipedia.org/wiki/Generalized_inverse), for which procrustes analyses are desirable as well.
+matrices to non-square matrices (https://en.wikipedia.org/wiki/Generalized_inverse), for which procrustes analyses are 
+desirable as well.
 
 ## Wrap-Up
 From the previous sections, we can conclude that the orthogonal procrustes problem stated above is solved by computing
@@ -51,4 +53,5 @@ From the previous sections, we can conclude that the orthogonal procrustes probl
 In many applications, one is interested in a so called *rigid motion* solution, which implies a reflection-free
 $\Omega$.
 
-In this implementation, we achieve this by making sure that $\det V=1$ by reflecting the first column of $V$ if necessary.
+In this implementation, we achieve this by making sure that $\det V=1$ by reflecting the first column of $V$ if 
+necessary.
