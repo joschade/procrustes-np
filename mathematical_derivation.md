@@ -52,7 +52,3 @@ In many applications, one is interested in a so called *rigid motion* solution, 
 $\Omega$.
 
 In this implementation, we achieve this by making sure that $\det V=1$ by reflecting the first column of $V$ if necessary.
-
-
-$$ test $$
-$$ \min_\Omega \| \Omega A - B \|_F $$
