@@ -50,8 +50,8 @@ From the previous sections, we can conclude that the orthogonal procrustes probl
 2. `return` $\Omega = UV^\intercal$.
 
 ## Reflection-free procrustes
-In many applications, one is interested in a so called *rigid motion* solution, which implies a reflection-free
+In many applications, one is interested in a so-called *rigid motion* solution, which implies a reflection-free
 $\Omega$.
 
-In this implementation, we achieve this by making sure that $\det V=1$ by reflecting the first column of $V$ if 
-necessary.
+In this implementation, we achieve this by making sure that $\det \Omega=1$ by reflecting the first column of $\Omega$ 
+if necessary.
