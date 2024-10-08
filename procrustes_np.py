@@ -6,7 +6,7 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
     :param A: matrix to be matched on B by rigid motion
     :param B: matrix to be matched by A
     :param centering: allow centering of A and B
-    :param reflection: allow reflection of Omega
+    :param reflection: allow reflection by Omega
     :return Omega: rigid motion matrix Omega such that Omega*A =~ B
     """
 
