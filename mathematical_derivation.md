@@ -45,7 +45,7 @@ matrices to non-square matrices (https://en.wikipedia.org/wiki/Generalized_inver
 ## Wrap-Up
 From the previous sections, we can conclude that the orthogonal procrustes problem stated above is solved by computing
 1. $U, \Sigma, V^\intercal = \mathrm {SVD}(BA^{-1})$
-2. `return` $\Omega = UV^\intercal$
+2. `return` $\Omega = UV^\intercal$.
 
 ## Reflection-free procrustes
 In many applications, one is interested in a so called *rigid motion* solution, which implies a reflection-free
