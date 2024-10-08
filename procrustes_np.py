@@ -1,5 +1,5 @@
-from numpy import matmul, mean, array
-from numpy.linalg import svd,  det
+from numpy import matmul, mean, array, shape
+from numpy.linalg import svd, det
 
 def orthogonal_procrustes(A: array, B: array, reflection = False) -> array:
     """
@@ -7,6 +7,8 @@ def orthogonal_procrustes(A: array, B: array, reflection = False) -> array:
     :param B: matrix to be matched by A
     :return Omega: rigid motion matrix Omega such that Omega*A =~ B
     """
+    assert A.shape == B.shape, "arrays A and B must be of equal shape"
+
     # centering
     a = mean(A, axis=1)
     b = mean(B, axis=1)
