@@ -38,4 +38,4 @@ From the previous sections, we can conclude that the orthogonal procrustes probl
 In many applications, one is interested in a so called *rigid motion* solution, which implies a reflection-free
 $\Omega$.
 
-In this implementation, we make sure that $\det V=1$ by reflecting the first column of $V$ if necessary.
+In this implementation, we achieve this by making sure that $\det V=1$ by reflecting the first column of $V$ if necessary.
