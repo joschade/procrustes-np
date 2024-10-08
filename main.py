@@ -8,7 +8,7 @@ def orthogonal_procrustes(A: np.array, B: np.array) -> np.array:
     """
 
     # perform SVD
-    U, Sigma, Vh = np.linalg.svd(B, compute_uv=True)
+    U, Sigma, Vh = np.linalg.svd(B, compute_uv=True, full_matrices=False)
     # Compute Omega * A (== U*Vh)
     OmegaA = np.matmul(U, Vh)
 
