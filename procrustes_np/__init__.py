@@ -1,0 +1,1 @@
+from .procrustes_np import orthogonal_procrustes
