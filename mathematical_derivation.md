@@ -32,8 +32,11 @@ $$ \Omega = UV^\intercal,$$
 where $U\Sigma V^\intercal = M$ is the SVD of $M$.
 
 We can reformulate the equation 
+
 $$\Omega A -B$$ 
+
 by applying  the *pseudo-inverse* $A^{-1}$  of $A$ and yield
+
 $$ \Omega - BA^{-1}.$$ 
 
 Pseudo-inverses are a notion which extends invertibility of 
