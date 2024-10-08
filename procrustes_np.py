@@ -9,6 +9,8 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
     :param reflection: allow reflection of Omega
     :return Omega: rigid motion matrix Omega such that Omega*A =~ B
     """
+
+    assert len(A.shape) == 2, "arrays A and B must be 2-dimensional"
     assert A.shape == B.shape, "arrays A and B must be of equal shape"
 
     if centering:
