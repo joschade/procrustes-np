@@ -18,15 +18,11 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
         a = mean(A, axis=1)
         b = mean(B, axis=1)
 
-        A_svd = (A.transpose() - a).transpose()
-        B_svd = (B.transpose() - b).transpose()
+        A = (A.transpose() - a).transpose()
+        B = (B.transpose() - b).transpose()
 
-    else:
-        A_svd = A
-        B_svd = B
-
-    # perform SVD
-    U, _, Vh = svd(matmul(B_svd, pinv(A_svd)))
+    # perform SVD on BA^{-1} (pseudo-inverse)
+    U, _, Vh = svd(matmul(B, pinv(A)))
 
     print(f'{det(U)=}')
     print(f'{det(Vh)=}')
