@@ -7,7 +7,9 @@ for a orthogonal matrix $\Omega$ (i.e. $ \det \Omega = \pm 1$), such that $A$ is
 possible.
 
 This can be stated as the optimization problem
+
 $$ \min_\Omega \| \Omega A - B \|_F $$
+
 under the constraint
 $$ \det \Omega = \pm1, $$
 where $\| \cdot \|$ denotes the Frobenius norm, which treats $m \times n$-matrices as $m \cdot n$-vectors.
