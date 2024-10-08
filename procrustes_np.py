@@ -26,7 +26,7 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
         B_svd = B
 
     # perform SVD
-    U, _, Vh = svd(matmul(B_svd, A.transpose()))
+    U, _, Vh = svd(matmul(B_svd, pinv(A_svd)))
 
     print(f'{det(U)=}')
     print(f'{det(Vh)=}')
