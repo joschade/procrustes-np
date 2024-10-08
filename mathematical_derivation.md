@@ -42,3 +42,4 @@ In this implementation, we achieve this by making sure that $\det V=1$ by reflec
 
 
 $$ test $$
+$$ \min \| \Omega A - B \|_F $$
