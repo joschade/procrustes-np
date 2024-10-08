@@ -1,4 +1,4 @@
-from numpy import matmul, mean, array, shape
+from numpy import matmul, mean, array
 from numpy.linalg import svd, det
 
 def orthogonal_procrustes(A: array, B: array, centering = True, reflection = False) -> array:
