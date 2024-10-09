@@ -4,7 +4,7 @@ Berlin, 08 OCT 2024
 
 ## Problem statement
 The orthogonal procrustes problem asks, given two matrices $A, B \in \mathbb{R}^{m \times n}$, 
-for a orthogonal matrix $\Omega$ (i.e. $ \det \Omega = \pm 1$), such that $A$ is as well superimposed on $B$ as 
+for a orthogonal matrix $\Omega$ (i.e. $\det \Omega=\pm 1$), such that $A$ is as well superimposed on $B$ as 
 possible.
 
 This can be stated as the optimization problem
