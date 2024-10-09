@@ -1,3 +1,4 @@
+import numpy as np
 from numpy import matmul, mean, array
 from numpy.linalg import svd, det
 
@@ -27,9 +28,12 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
     # compute Omega
     Omega = matmul(U, Vh)
 
+    det_Omega = det(Omega)
     # make sure rigid motion (no reflection):
     if not reflection:
-        if det(Omega) < 0.: Omega[0] = -Omega[0]
-
+        if det(U @ Vh) < 0.:
+            D = np.identity(A.shape[0])
+            D[-1,-1] = det_Omega
+            Omega = U @ D @ Vh
     return Omega
 

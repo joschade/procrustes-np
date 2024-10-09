@@ -90,7 +90,9 @@ From the previous sections, we can conclude that the orthogonal procrustes probl
 
 ## Reflection-free procrustes
 In many applications, one is interested in a so-called *rigid motion* solution, which implies a reflection-free
-$\Omega$.
+$\Omega$. This is achieved by the *Kabsch algorithm* (https://en.wikipedia.org/wiki/Kabsch_algorithm). It extends the algorithm from the Wrap-Up a bit:
+1. $U, \Sigma, V^\intercal = \mathrm {SVD}(BA^\intercal)$
+2. `if` $\det(UV^\intercal=-1)$ `return` $\Omega=U \mathrm{diag}(1,1 .., 1, -1) V^\intercal$.
 
-In this implementation, we achieve this by making sure that $\det \Omega=1$ by reflecting the first column of $\Omega$ 
-if necessary.
+This means we reflect the last column of $V$, which is the least prominent of the prinicpal axes to reduce the 
+"collateral damage" caused by prohibiting reflection as much as possible.
