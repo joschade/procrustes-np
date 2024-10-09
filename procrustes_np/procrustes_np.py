@@ -24,9 +24,6 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
     # perform SVD on BA^{-1} (pseudo-inverse)
     U, _, Vh = svd(matmul(B, pinv(A)))
 
-    print(f'{det(U)=}')
-    print(f'{det(Vh)=}')
-
     # compute Omega
     Omega = matmul(U, Vh)
 
