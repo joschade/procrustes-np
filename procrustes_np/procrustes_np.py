@@ -1,5 +1,5 @@
 from numpy import matmul, mean, array
-from numpy.linalg import svd, det, pinv
+from numpy.linalg import svd, det
 
 def orthogonal_procrustes(A: array, B: array, centering = True, reflection = False) -> array:
     """
@@ -22,7 +22,7 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
         B = (B.transpose() - b).transpose()
 
     # perform SVD on BA^{-1} (pseudo-inverse)
-    U, _, Vh = svd(matmul(B, pinv(A)))
+    U, _, Vh = svd(matmul(B, A.transpose()))
 
     # compute Omega
     Omega = matmul(U, Vh)
