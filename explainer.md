@@ -94,5 +94,5 @@ $\Omega$. This is achieved by the *Kabsch algorithm* (https://en.wikipedia.org/w
 1. $U, \Sigma, V^\intercal = \mathrm {SVD}(BA^\intercal)$
 2. `if` $\det(UV^\intercal=-1)$ `return` $\Omega=U \mathrm{diag}(1,1 .., 1, -1) V^\intercal$.
 
-This means we reflect the last column of $V$, which is the least prominent of the prinicpal axes.
-
+This means we reflect the last column of $V$, which is the least prominent of the prinicpal axes to reduce the 
+"collateral damage" caused by prohibiting reflection as much as possible.
