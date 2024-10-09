@@ -1,6 +1,6 @@
 # Mathematical derivation
 Based on https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem.
-Berlin, 08 OCT 2024
+Berlin, 09 OCT 2024
 
 ## Problem statement
 The orthogonal procrustes problem asks, given two matrices $A, B \in \mathbb{R}^{m \times n}$, 
