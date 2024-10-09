@@ -1,6 +1,5 @@
 # Mathematical derivation
-Based on https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem.
-Berlin, 09 OCT 2024
+Based on https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem (as of 09 OCT 2024).
 
 ## Problem statement
 The orthogonal procrustes problem asks, given two matrices $A, B \in \mathbb{R}^{m \times n}$, 
@@ -15,7 +14,7 @@ under the constraint
 
 $$ \det \Omega = \pm1, $$
 
-where $\| \cdot \|$ denotes the Frobenius norm, which treats $m \times n$-matrices as $m \cdot n$-vectors.
+where $\| \cdot \|_F$ denotes the Frobenius norm, which treats $m \times n$-matrices as $m \cdot n$-vectors.
 
 ## Connection to Singular Value Decomposition (SVD)
 It was shown by Peter Schönemann (https://doi.org/10.1007%2FBF02289451) that the solution to
@@ -54,7 +53,7 @@ $$ \det \Omega = \pm1. $$
 
 
 ## Numerical considerations
-Perfomrance can be improved by a numerical "hack", which is mathematically a bit more elaborate. This hack is to replace the pseudo-inverse $A^{-1}$ with the 
+Performance can be improved by a numerical "hack", which is mathematically a bit more elaborate. This hack is to replace the pseudo-inverse $A^{-1}$ with the 
 transpose $A^\intercal$, which is numerically very cheap to compute. This leads to 
 
 $$ \Omega AA^\intercal - BA^\intercal.$$ 
