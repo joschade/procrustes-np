@@ -1,10 +1,9 @@
-import numpy as np
 from numpy import matmul, mean, array
 from numpy.linalg import svd, det, norm
 
 def orthogonal_procrustes(A: array, B: array, centering = True, reflection = False) -> array:
     """
-    :param A: matrix to be matched on B by rigid motion
+    :param A: matrix to be matched on B by orthogonal transformation
     :param B: matrix to be matched by A
     :param centering: allow centering of A and B
     :param reflection: allow reflection by Omega
@@ -34,7 +33,7 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
 
     # make sure rigid motion (no reflection):
     if not reflection:
-        if det(Omega) < 0.:
+        if det_Omega < 0.:
             Vh[-1] = -Vh[-1]
             Omega = U @ Vh
 
