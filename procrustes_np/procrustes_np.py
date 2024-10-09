@@ -28,16 +28,15 @@ def orthogonal_procrustes(A: array, B: array, centering = True, reflection = Fal
     U, _, Vh = svd(matmul(B, A.transpose()))
 
     # compute Omega
-    Omega = matmul(U, Vh)
+    Omega = U @ Vh
 
     det_Omega = det(Omega)
 
     # make sure rigid motion (no reflection):
     if not reflection:
-        if det(U @ Vh) < 0.:
-            D = np.identity(A.shape[0])
-            D[-1,-1] = det_Omega
-            Omega = U @ D @ Vh
+        if det(Omega) < 0.:
+            Vh[-1] = -Vh[-1]
+            Omega = U @ Vh
 
     # Compute the Procrustes distance (Frobenius norm)
     dist = norm(Omega @ A - B, ord='fro')
