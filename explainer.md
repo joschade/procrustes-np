@@ -58,7 +58,7 @@ transpose $A^\intercal$, which is numerically very cheap to compute. This leads 
 
 $$ \Omega AA^\intercal - BA^\intercal.$$ 
 
-But why does this still yield the correct result? First note that AA^\intercal is a symmetric and square matrix, which 
+But why does this still yield the correct result? First note that $AA^\intercal$ is a symmetric and square matrix, which 
 means that it is in most cases normally invertible. Its inverse can be written in terms of pseudo-inverses
 
 $$ (AA^\intercal)^{-1} = (A^\intercal)^{-1}A^{-1} $$
